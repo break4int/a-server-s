@@ -13,7 +13,8 @@
 
 	<!-- <mvc:annotation-driven /> -->
 
-	<context:component-scan base-package="co.kr.abiyo"></context:component-scan>
+	<context:component-scan base-package="co.kr.abiyo">
+	</context:component-scan>
 
 	<!-- <bean id="controller" class="com.test.TController"></bean> -->
 	<!-- <bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller"> -->
