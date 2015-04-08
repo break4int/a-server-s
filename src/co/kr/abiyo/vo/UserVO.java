@@ -9,6 +9,9 @@ public class UserVO {
 	private String password;
 	private String userName;
 	private String phoneNumber;
+	private String regDate;
+	private String upDate;
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -38,5 +41,17 @@ public class UserVO {
 	}
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+	public String getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
+	public String getUpDate() {
+		return upDate;
+	}
+	public void setUpDate(String upDate) {
+		this.upDate = upDate;
 	}
 }
