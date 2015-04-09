@@ -38,6 +38,12 @@
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:order="1">
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
 
 </beans>
 
