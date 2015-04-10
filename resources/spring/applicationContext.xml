@@ -9,7 +9,7 @@
 	<context:annotation-config/> 
 
 	<context:property-placeholder
-		location="file:///C:/breakpoint\americano\applicationSystemConfig.xml" />
+		location="file:///breakpoint/americano/applicationSystemConfig.xml" />
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="${mysql.jdbc.driverClassName}" />
