@@ -7,6 +7,11 @@ import co.kr.abiyo.vo.TicketVO;
 @Repository
 public class TicketDAO extends CommonDAO {
 
+	public TicketVO ticketTest() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	public TicketVO getTicketInfo() {
 		// TODO Auto-generated method stub
 		return null;

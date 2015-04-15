@@ -19,6 +19,11 @@ public class TicketControll {
 	@Autowired
 	TicketDAO ticketDAO;
 	
+	@RequestMapping(method = RequestMethod.GET, value ="/test")
+	public @ResponseBody TicketVO ticketTest(){
+		return ticketDAO.ticketTest();
+	}
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody TicketVO getTicketInfo(){
 		return ticketDAO.getTicketInfo();

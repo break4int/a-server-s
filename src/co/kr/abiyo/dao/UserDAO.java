@@ -7,7 +7,7 @@ import co.kr.abiyo.vo.UserVO;
 @Repository
 public class UserDAO extends CommonDAO {
 
-	public Object getTest() {
+	public Object userTest() {
 		return getSession().<UserVO>selectList("co.kr.abiyo.UserDAO.getMembers");
 	}
 

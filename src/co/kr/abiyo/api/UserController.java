@@ -19,6 +19,11 @@ public class UserController {
 	@Autowired
 	UserDAO userDAO;
 	
+	@RequestMapping(method = RequestMethod.GET, value = "/test")
+	public @ResponseBody Object userTest(){
+		return userDAO.userTest();
+	}
+	
 	@RequestMapping(method = RequestMethod.PUT)
 	public @ResponseBody UserVO reflectUser(){
 		

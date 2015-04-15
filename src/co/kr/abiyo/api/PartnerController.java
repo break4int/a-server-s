@@ -18,6 +18,11 @@ public class PartnerController {
 	
 	@Autowired
 	PartnerDAO partnerDAO;
+
+	@RequestMapping(method = RequestMethod.GET, value ="/test")
+	public @ResponseBody PartnerVO partnerTest(){
+		return partnerDAO.partnerTest();
+	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody PartnerVO getPartner(){
