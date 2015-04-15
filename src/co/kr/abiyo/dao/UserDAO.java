@@ -8,25 +8,25 @@ import co.kr.abiyo.vo.UserVO;
 public class UserDAO extends CommonDAO {
 
 	public Object userTest() {
-		return getSession().<UserVO>selectList("co.kr.abiyo.UserDAO.getMembers");
+		return getSession().<UserVO>selectList("co.kr.abiyo.UserDAO.userTest");
 	}
 
-	public UserVO reflectUser() {
+	public Object reflectUser() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public UserVO getUser() {
+	public Object getUser() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public UserVO updateUser() {
+	public Object updateUser() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public UserVO removeUser() {
+	public Object removeUser() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -20,17 +20,17 @@ public class PartnerController {
 	PartnerDAO partnerDAO;
 
 	@RequestMapping(method = RequestMethod.GET, value ="/test")
-	public @ResponseBody PartnerVO partnerTest(){
+	public @ResponseBody Object partnerTest(){
 		return partnerDAO.partnerTest();
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody PartnerVO getPartner(){
+	public @ResponseBody Object getPartner(){
 		return partnerDAO.getPartner();
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value= "/{partnerId}")
-	public @ResponseBody PartnerVO getPartnerInfo(@PathVariable String partnerId){
+	public @ResponseBody Object getPartnerInfo(@PathVariable String partnerId){
 		return partnerDAO.getPartner();
 	}
 }

@@ -25,25 +25,25 @@ public class UserController {
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT)
-	public @ResponseBody UserVO reflectUser(){
+	public @ResponseBody Object reflectUser(){
 		
 		return userDAO.reflectUser();
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/{userId}")
-	public @ResponseBody UserVO getUser(@PathVariable String userId){
+	public @ResponseBody Object getUser(@PathVariable String userId){
 		
 		return userDAO.getUser();
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, value = "/{userId}" )
-	public @ResponseBody UserVO updateUser(@PathVariable String userId){
+	public @ResponseBody Object updateUser(@PathVariable String userId){
 		
 		return userDAO.updateUser();
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE, value = "/{userId}")
-	public @ResponseBody UserVO removeUser(@PathVariable String userId){
+	public @ResponseBody Object removeUser(@PathVariable String userId){
 		
 		return userDAO.removeUser();
 	}

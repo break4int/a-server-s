@@ -4,11 +4,13 @@ public class TicketVO {
 	private int ticketId;
 	private int partnerId;
 	private int userId;
+	private int ticketType;
 	private int number;
 	private int status;
 	private int isExpire;
 	private String regDate;
 	private String upDate;
+	
 	public int getTicketId() {
 		return ticketId;
 	}
@@ -26,6 +28,12 @@ public class TicketVO {
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	public int getTicketType() {
+		return ticketType;
+	}
+	public void setTicketType(int ticketType) {
+		this.ticketType = ticketType;
 	}
 	public int getNumber() {
 		return number;
@@ -57,5 +65,4 @@ public class TicketVO {
 	public void setUpDate(String upDate) {
 		this.upDate = upDate;
 	}
-	
 }

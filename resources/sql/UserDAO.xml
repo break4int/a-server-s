@@ -9,9 +9,13 @@
 		<result property="userId" column="user_id" />
 		<result property="userEmail" column="user_email" />
 		<result property="password" column="password" />
+		<result property="userName" column="user_name" />
+		<result property="phoneNumber" column="phone_number" />
+		<result property="regDate" column="reg_date" />
+		<result property="upDate" column="upd_date" />
 	</resultMap>
 
-	<select id="getMembers" resultMap="rmUserVO">
+	<select id="userTest" resultMap="rmUserVO">
 		SELECT *
 		FROM user;
 	</select>

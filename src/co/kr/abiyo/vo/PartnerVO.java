@@ -2,7 +2,7 @@ package co.kr.abiyo.vo;
 
 public class PartnerVO {
 	private int partnerId;
-	private String partnerImage;
+	private String partnerImageUrl;
 	private String partnerName;
 	private float latitude;
 	private float longitude;
@@ -13,18 +13,18 @@ public class PartnerVO {
 	private String introduction;
 	private String description;
 	private String regDate;
-	private String update;
+	private String upDate;
 	public int getPartnerId() {
 		return partnerId;
 	}
 	public void setPartnerId(int partnerId) {
 		this.partnerId = partnerId;
 	}
-	public String getPartnerImage() {
-		return partnerImage;
+	public String getPartnerImageUrl() {
+		return partnerImageUrl;
 	}
-	public void setPartnerImage(String partnerImage) {
-		this.partnerImage = partnerImage;
+	public void setPartnerImageUrl(String partnerImageUrl) {
+		this.partnerImageUrl = partnerImageUrl;
 	}
 	public String getPartnerName() {
 		return partnerName;
@@ -87,9 +87,9 @@ public class PartnerVO {
 		this.regDate = regDate;
 	}
 	public String getUpdate() {
-		return update;
+		return upDate;
 	}
-	public void setUpdate(String update) {
-		this.update = update;
+	public void setUpdate(String upDate) {
+		this.upDate = upDate;
 	}
 }

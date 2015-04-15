@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.kr.abiyo.PartnerDAO">
+
+	<resultMap type="co.kr.abiyo.vo.PartnerVO" id="rmPartnerVO">
+		<result property="partnerId" column="partner_id" />
+		<result property="partnerImageUrl" column="partner_image_url" />
+		<result property="partnerName" column="partner_name" />
+		<result property="latitude" column="latitude" />
+		<result property="longitude" column="longitude" />
+		<result property="address" column="address" />
+		<result property="openTime" column="open_time" />
+		<result property="closeTime" column="close_time" />
+		<result property="phoneNumber" column="phone_number" />
+		<result property="introduction" column="introduction" />
+		<result property="description" column="description" />
+		<result property="regDate" column="reg_date" />
+		<result property="upDate" column="upd_date" />
+	</resultMap>
+
+	<select id="partnerTest" resultMap="rmPartnerVO">
+		SELECT *
+		FROM partner;
+	</select>
+</mapper>

@@ -7,22 +7,21 @@ import co.kr.abiyo.vo.TicketVO;
 @Repository
 public class TicketDAO extends CommonDAO {
 
-	public TicketVO ticketTest() {
-		// TODO Auto-generated method stub
-		return null;
+	public Object ticketTest() {
+		return getSession().selectList("co.kr.abiyo.TicketDAO.ticketTest");
 	}
 	
-	public TicketVO getTicketInfo() {
+	public Object getTicketInfo() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public TicketVO useTicket() {
+	public Object useTicket() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public TicketVO cancelTicket() {
+	public Object cancelTicket() {
 		// TODO Auto-generated method stub
 		return null;
 	}
