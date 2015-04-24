@@ -9,12 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.filter.OncePerRequestFilter;
 
-public class authenticationFilter extends OncePerRequestFilter {
+public class AuthenticationFilter extends OncePerRequestFilter {
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
-		response.addHeader("", "");
+
+		response.addHeader("X-Server-Type", "spring");
+
+		chain.doFilter(request, response);
 	}
 
 }
