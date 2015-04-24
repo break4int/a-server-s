@@ -25,4 +25,12 @@
 		SELECT *
 		FROM partner;
 	</select>
+	<select id="getPartner" parameterType="String" resultMap="rmPartnerVO" >
+		SELECT *
+		FROM partner
+		<if test = "value != null">
+			WHERE partner_id = #{value}
+		</if>;
+	</select>
+	
 </mapper>

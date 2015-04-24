@@ -11,19 +11,16 @@ public class TicketDAO extends CommonDAO {
 		return getSession().selectList("co.kr.abiyo.TicketDAO.ticketTest");
 	}
 	
-	public Object getTicketInfo() {
-		// TODO Auto-generated method stub
-		return null;
+	public Object getTicketInfo(String ticketId) {
+		return getSession().selectList("co.kr.abiyo.TicketDAO.getTicketInfo", ticketId);
 	}
 
-	public Object useTicket() {
-		// TODO Auto-generated method stub
-		return null;
+	public Object useTicket(String ticketId) {
+		return getSession().update("co.kr.abiyo.TicketDAO.useTicket", ticketId);
 	}
 
-	public Object cancelTicket() {
-		// TODO Auto-generated method stub
-		return null;
+	public Object cancelTicket(String ticketId) {
+		return getSession().delete("co.kr.abiyo.TicketDAO.cancelTicket", ticketId);
 	}
 
 }

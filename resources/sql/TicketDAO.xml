@@ -20,4 +20,19 @@
 		SELECT *
 		FROM ticket;
 	</select>
+	<select id="getTicketInfo" parameterType="String" resultMap="rmTicketVO">
+		SELECT *
+		FROM ticket
+		WHERE ticket_id = #{value};
+	</select>
+<!-- 	 resultMap="rmTicketVO"> -->
+	<update id="useTicket" parameterType="String">
+		UPDATE ticket
+		SET status = 1
+		WHERE ticket_id = #{value};
+	</update>
+	<delete id="cancelTicket" parameterType="String" >
+		DELETE FROM ticket
+		WHERE ticket_id = #{value};
+	</delete>
 </mapper>

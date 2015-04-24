@@ -13,9 +13,8 @@ public class PartnerDAO extends CommonDAO {
 		return getSession().selectList("co.kr.abiyo.PartnerDAO.partnerTest");
 	}
 	
-	public Object getPartner() {
-		// TODO Auto-generated method stub
-		return null;
+	public Object getPartner(String partnerId) {
+		return getSession().selectList("co.kr.abiyo.PartnerDAO.getPartner", partnerId);
 	}
 
 

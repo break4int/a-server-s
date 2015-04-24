@@ -24,18 +24,18 @@ public class TicketControll {
 		return ticketDAO.ticketTest();
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody Object getTicketInfo() {
-		return ticketDAO.getTicketInfo();
+	@RequestMapping(method = RequestMethod.GET, value = "/{ticketId}")
+	public @ResponseBody Object getTicketInfo(@PathVariable String ticketId) {
+		return ticketDAO.getTicketInfo(ticketId);
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/{ticketId}/use")
 	public @ResponseBody Object useTicket(@PathVariable String ticketId) {
-		return ticketDAO.useTicket();
+		return ticketDAO.useTicket(ticketId);
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/{ticketId}/cancel")
 	public @ResponseBody Object cancelTicket(@PathVariable String ticketId) {
-		return ticketDAO.cancelTicket();
+		return ticketDAO.cancelTicket(ticketId);
 	}
 }

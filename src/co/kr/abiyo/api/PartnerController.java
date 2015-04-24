@@ -26,11 +26,11 @@ public class PartnerController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody Object getPartner() {
-		return partnerDAO.getPartner();
+		return partnerDAO.getPartner(null);
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/{partnerId}")
 	public @ResponseBody Object getPartnerInfo(@PathVariable String partnerId) {
-		return partnerDAO.getPartner();
+		return partnerDAO.getPartner(partnerId);
 	}
 }
