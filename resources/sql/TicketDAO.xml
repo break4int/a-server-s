@@ -28,11 +28,17 @@
 <!-- 	 resultMap="rmTicketVO"> -->
 	<update id="useTicket" parameterType="String">
 		UPDATE ticket
-		SET status = 1
+		SET status = 1, upd_date = now()
 		WHERE ticket_id = #{value};
 	</update>
-	<delete id="cancelTicket" parameterType="String" >
-		DELETE FROM ticket
+	<update id="cancelTicket" parameterType="String" >
+		UPDATE ticket
+		SET status = 2, upd_date = now()
 		WHERE ticket_id = #{value};
-	</delete>
+	</update>
+	<insert id="putTicket">
+		INSERT INTO ticket (partner_id, user_id, ticket_type, number) VALUES (#{partnerId}, #{userId}, #{ticketType}, #{number});
+	</insert>
+	<update id="callTicketType">
+	</update>
 </mapper>

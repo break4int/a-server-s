@@ -20,7 +20,15 @@ public class TicketDAO extends CommonDAO {
 	}
 
 	public Object cancelTicket(String ticketId) {
-		return getSession().delete("co.kr.abiyo.TicketDAO.cancelTicket", ticketId);
+		return getSession().update("co.kr.abiyo.TicketDAO.cancelTicket", ticketId);
+	}
+
+	public Object putTicket(TicketVO ticketVO) {
+		return getSession().insert("co.kr.abiyo.TicketDAO.putTicket", ticketVO);
+	}
+	
+	public Object callTicketType(String ticketType) {
+		return getSession().update("co.kr.abiyo.TicketDAO.callTicketType", ticketType);
 	}
 
 }
