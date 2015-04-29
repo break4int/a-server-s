@@ -31,7 +31,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		}
 		
 		if(authType.equals("fingerprint")) {
-			checkDeviceInfo(authToken);
+			//checkDeviceInfo(authToken);
 		}	
 		
 		return true;
