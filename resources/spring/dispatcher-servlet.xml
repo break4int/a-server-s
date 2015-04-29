@@ -16,6 +16,15 @@
 	<context:component-scan base-package="co.kr.abiyo">
 	</context:component-scan>
 
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="co.kr.abiyo.api.common.LoginInterceptor" />
+		</mvc:interceptor>
+		<!-- 추가로 여러개의 인터셉터 설정 가능 <mvc:interceptor> <mvc:mapping path="/admin/board_write"/> 
+			<bean class="com.spring.interceptor.AdminInterCeptor"/> </mvc:interceptor> -->
+	</mvc:interceptors>
+
 	<!-- <bean id="controller" class="com.test.TController"></bean> -->
 	<!-- <bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller"> -->
 	<!-- <property name="classesToBeBound"> -->
