@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.kr.abiyo.DeviceDAO">
+
+	<resultMap type="co.kr.abiyo.vo.DeviceVO" id="rmDeviceVO">
+		<result property="deviceId" column="partner_id" />
+		<result property="userId" column="user_id" />
+		<result property="fingerPrint" column="fingerprint" />
+		<result property="regDate" column="reg_date" />
+		<result property="updDate" column="upd_date" />
+	</resultMap>
+
+	<select id="getDevices" resultMap="rmDeviceVO">
+		SELECT *
+		FROM device;
+	</select>
+	<select id="getDevice" parameterType="String" resultMap="rmDeviceVO" >
+		SELECT *
+		FROM device
+		<if test = "value != null">
+			WHERE fingerprint = #{value}
+		</if>;
+	</select>
+	
+	<insert id="insertDevice">
+		INSERT INTO device (user_id, fingerprint) VALUES (#{userId}, #{fingerPrint});
+	</insert>
+	
+</mapper>
