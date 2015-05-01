@@ -7,8 +7,14 @@ import co.kr.abiyo.vo.UserVO;
 @Repository
 public class UserDAO extends CommonDAO {
 
+	public String addUser(UserVO userVO) {
+
+		getSession().insert("co.kr.abiyo.UserDAO.addUser", userVO);
+		return userVO.getUserId();
+	}
+
 	public Object userTest() {
-		return getSession().<UserVO>selectList("co.kr.abiyo.UserDAO.userTest");
+		return getSession().<UserVO> selectList("co.kr.abiyo.UserDAO.userTest");
 	}
 
 	public Object reflectUser() {

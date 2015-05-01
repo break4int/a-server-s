@@ -15,6 +15,18 @@
 		<result property="upDate" column="upd_date" />
 	</resultMap>
 
+	<insert id="addUser" parameterType="co.kr.abiyo.vo.UserVO">
+		<selectKey keyProperty="userId"  keyColumn="user_id" resultType="String" order="BEFORE">
+			SELECT (MAX(IFNULL(user_id, 0)) + 1) as user_id
+			FROM USER;
+		</selectKey>
+		INSERT INTO
+		USER (	user_id		, user_email	, password		, user_name
+			, phone_number		, reg_date	, upd_date)
+		VALUES (#{userId}	, #{userEmail}	, #{password}	, #{userName}
+			, #{phoneNumber}	, NOW()		, NOW());
+ </insert>
+	
 	<select id="userTest" resultMap="rmUserVO">
 		SELECT *
 		FROM user;

@@ -1,58 +1,66 @@
 package co.kr.abiyo.vo;
 
+import java.sql.Timestamp;
+
 public class DeviceVO {
-	private int deviceId;
-	private int userId;
-	String fingerPrint;
-	String regDate;
-	String updDate;
-	
+	private Integer		deviceId;
+	private Integer		userId;
+	private String		fingerprint;
+	private Timestamp	regDate;
+	private Timestamp	updDate;
+
 	public DeviceVO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	public DeviceVO(int deviceId, int userId, String fingerPrint,
-			String regDate, String updDate) {
+
+	public DeviceVO(Integer deviceId, Integer userId, String fingerprint, Timestamp regDate, Timestamp updDate) {
 		super();
 		this.deviceId = deviceId;
 		this.userId = userId;
-		this.fingerPrint = fingerPrint;
+		this.fingerprint = fingerprint;
 		this.regDate = regDate;
 		this.updDate = updDate;
 	}
 
-	public int getDeviceId() {
+	public Integer getDeviceId() {
 		return deviceId;
 	}
-	public void setDeviceId(int deviceId) {
+
+	public void setDeviceId(Integer deviceId) {
 		this.deviceId = deviceId;
 	}
-	public int getUserId() {
+
+	public Integer getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
-	public String getFingerPrint() {
-		return fingerPrint;
+
+	public String getFingerprint() {
+		return fingerprint;
 	}
-	public void setFingerPrint(String fingerPrint) {
-		this.fingerPrint = fingerPrint;
+
+	public void setFingerprint(String fingerprint) {
+		this.fingerprint = fingerprint;
 	}
-	public String getRegDate() {
+
+	public Timestamp getRegDate() {
 		return regDate;
 	}
-	public void setRegDate(String regDate) {
+
+	public void setRegDate(Timestamp regDate) {
 		this.regDate = regDate;
 	}
-	public String getUpdDate() {
+
+	public Timestamp getUpdDate() {
 		return updDate;
 	}
-	public void setUpdDate(String updDate) {
+
+	public void setUpdDate(Timestamp updDate) {
 		this.updDate = updDate;
 	}
-	
-	
+
 }

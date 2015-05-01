@@ -6,9 +6,9 @@
 <mapper namespace="co.kr.abiyo.DeviceDAO">
 
 	<resultMap type="co.kr.abiyo.vo.DeviceVO" id="rmDeviceVO">
-		<result property="deviceId" column="partner_id" />
+		<result property="deviceId" column="device_id" />
 		<result property="userId" column="user_id" />
-		<result property="fingerPrint" column="fingerprint" />
+		<result property="fingerprint" column="fingerprint" />
 		<result property="regDate" column="reg_date" />
 		<result property="updDate" column="upd_date" />
 	</resultMap>
@@ -26,7 +26,7 @@
 	</select>
 	
 	<insert id="insertDevice">
-		INSERT INTO device (user_id, fingerprint) VALUES (#{userId}, #{fingerPrint});
+		INSERT INTO device (user_id, fingerprint) VALUES (#{userId}, #{fingerprint});
 	</insert>
 	
 </mapper>
