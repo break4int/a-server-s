@@ -14,8 +14,24 @@
 	<!-- <mvc:annotation-driven /> -->
 
 	<context:component-scan base-package="co.kr.abiyo">
+	    	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="useNotAcceptableStatusCode" value="true" />
+		<property name="defaultViews">
+		    <list>
+		        <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+		    </list>
+		</property>    
+	</bean>
+	
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
@@ -40,14 +56,6 @@
 	<!-- <constructor-arg ref="jaxb2Marshaller" /> -->
 	<!-- </bean> -->
 
-	<mvc:annotation-driven>
-		<mvc:message-converters>
-			<bean
-				class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-			</bean>
-		</mvc:message-converters>
-	</mvc:annotation-driven>
-	
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:order="1">
 		<property name="prefix" value="/WEB-INF/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>

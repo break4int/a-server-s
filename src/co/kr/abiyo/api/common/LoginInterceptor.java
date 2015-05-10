@@ -32,7 +32,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		 */
 
 		// 호출된 API 가 [GET] /device/fingerprint 일 경우는 인증 무시하고 지나갈것!
-
+		
 		// 사용자 단말 (a-app)
 		if ("fingerprint".equalsIgnoreCase(authType)) {
 

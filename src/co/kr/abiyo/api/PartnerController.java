@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import co.kr.abiyo.api.common.BaseController;
 import co.kr.abiyo.dao.PartnerDAO;
@@ -18,17 +18,17 @@ public class PartnerController extends BaseController {
 	PartnerDAO	partnerDAO;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/test")
-	public @ResponseBody Object partnerTest() {
-		return partnerDAO.partnerTest();
+	public ModelAndView partnerTest() {
+		return super.result(partnerDAO.partnerTest());
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody Object getPartner() {
-		return partnerDAO.getPartner(null);
+	public ModelAndView getPartner() {
+		return super.result(partnerDAO.getPartner(null));
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/{partnerId}")
-	public @ResponseBody Object getPartnerInfo(@PathVariable String partnerId) {
-		return partnerDAO.getPartner(partnerId);
+	public ModelAndView getPartnerInfo(@PathVariable String partnerId) {
+		return super.result(partnerDAO.getPartner(partnerId));
 	}
 }

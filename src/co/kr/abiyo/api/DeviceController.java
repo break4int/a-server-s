@@ -7,7 +7,7 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import co.kr.abiyo.api.common.BaseController;
 import co.kr.abiyo.dao.DeviceDAO;
@@ -26,12 +26,12 @@ public class DeviceController extends BaseController {
 	private UserDAO		userDAO;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/test")
-	public @ResponseBody Object deviceTest() {
-		return deviceDAO.getDevices();
+	public ModelAndView deviceTest() {
+		return super.result(deviceDAO.getDevices());
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/fingerprint")
-	public @ResponseBody Object getFingerPrint() {
+	public ModelAndView getFingerPrint() {
 
 		// TODO 이미 인증정보가 헤더에 있는 사용자인지 체크 할것!!
 
@@ -51,6 +51,6 @@ public class DeviceController extends BaseController {
 			}
 		}
 
-		return fingerprint;
+		return super.result(fingerprint);
 	}
 }

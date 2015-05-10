@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import co.kr.abiyo.api.common.BaseController;
 import co.kr.abiyo.dao.UserDAO;
@@ -18,32 +18,32 @@ public class UserController extends BaseController {
 	UserDAO	userDAO;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/test")
-	public @ResponseBody Object userTest() {
-		return userDAO.userTest();
+	public ModelAndView userTest() {
+		return super.result(userDAO.userTest());
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
-	public @ResponseBody Object reflectUser() {
+	public ModelAndView reflectUser() {
 
-		return userDAO.reflectUser();
+		return super.result(userDAO.reflectUser());
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/{userId}")
-	public @ResponseBody Object getUser(@PathVariable String userId) {
+	public ModelAndView getUser(@PathVariable String userId) {
 
-		return userDAO.getUser();
+		return super.result(userDAO.getUser());
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/{userId}")
-	public @ResponseBody Object updateUser(@PathVariable String userId) {
+	public ModelAndView updateUser(@PathVariable String userId) {
 
-		return userDAO.updateUser();
+		return super.result(userDAO.updateUser());
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, value = "/{userId}")
-	public @ResponseBody Object removeUser(@PathVariable String userId) {
+	public ModelAndView removeUser(@PathVariable String userId) {
 
-		return userDAO.removeUser();
+		return super.result(userDAO.removeUser());
 	}
 
 }
