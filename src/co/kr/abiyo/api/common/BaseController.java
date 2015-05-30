@@ -9,8 +9,7 @@ public class BaseController {
 
 	// JacksonJsonView 사용할 것
 	protected ModelAndView result(Object o) {
-
-		ModelAndView mav = new ModelAndView();
+		ModelAndView mav = new ModelAndView("jsonView");
 		mav.addObject("code", "A_0000");
 		mav.addObject("message", "OK");
 		mav.addObject("result", o);

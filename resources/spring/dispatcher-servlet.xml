@@ -23,14 +23,14 @@
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 	
-	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-		<property name="useNotAcceptableStatusCode" value="true" />
-		<property name="defaultViews">
-		    <list>
-		        <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
-		    </list>
-		</property>    
-	</bean>
+<!-- 	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver"> -->
+<!-- 		<property name="useNotAcceptableStatusCode" value="true" /> -->
+<!-- 		<property name="defaultViews"> -->
+<!-- 		    <list> -->
+<!-- 		        <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" /> -->
+<!-- 		    </list> -->
+<!-- 		</property>     -->
+<!-- 	</bean> -->
 	
 	<mvc:interceptors>
 		<mvc:interceptor>
@@ -61,8 +61,11 @@
 		<property name="suffix" value=".jsp"></property>
 		<property name="contentType" value="text/html; charset=UTF-8"/>
 	</bean>
-
-
+	
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" id="viewResolver2" p:order="0"/>
+<bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" id="jsonView">
+    <property name="contentType" value="application/json;charset=UTF-8"/>
+</bean>
 </beans>
 
 
