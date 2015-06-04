@@ -28,6 +28,22 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>classpath:/message/message</value>
+            </list>
+        </property>
+        <property name="cacheSeconds" value="100000" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+    <bean id="messageSourceAccessor" class="org.springframework.context.support.MessageSourceAccessor">
+        <constructor-arg ref="messageSource"/>
+    </bean>
+    <bean id="messageUtil" class="co.kr.abiyo.api.common.MessageUtil">
+        <property name="messageSourceAccessor" ref="messageSourceAccessor"/>
+    </bean>   
 
 
 	<!-- <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> -->

@@ -22,7 +22,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 		logger.info("interceptor ==================================>");
-
 		String authType = request.getHeader("x-auth-type");
 		String authToken = request.getHeader("x-auth-token");
 		/*

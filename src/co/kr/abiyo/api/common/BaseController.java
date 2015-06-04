@@ -9,11 +9,27 @@ public class BaseController {
 
 	// JacksonJsonView 사용할 것
 	protected ModelAndView result(Object o) {
+		ResultMessageMapper mapper = new ResultMessageMapper();
+		String code = Constants.RESULT_CODE_SUCCESS;
+		
 		ModelAndView mav = new ModelAndView("jsonView");
-		mav.addObject("code", "A_0000");
-		mav.addObject("message", "OK");
+		mav.addObject("code", code);
+		mav.addObject("message", mapper.getMessage(code));
 		mav.addObject("result", o);
 
 		return mav;
 	}
+	
+	protected ModelAndView result(String code, Object o) {
+		ResultMessageMapper mapper = new ResultMessageMapper();
+		
+		ModelAndView mav = new ModelAndView("jsonView");
+		mav.addObject("code", code);
+		mav.addObject("message", mapper.getMessage(code));
+		mav.addObject("result", o);
+
+		return mav;
+	}
+	
+
 }

@@ -28,7 +28,7 @@ public class UserController extends BaseController {
 		return super.result(userDAO.reflectUser());
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/{userId}")
+	@RequestMapping(method = RequestMethod.GET, value = "/{userId}/ticket")
 	public ModelAndView getUser(@PathVariable String userId) {
 
 		return super.result(userDAO.getUser());
